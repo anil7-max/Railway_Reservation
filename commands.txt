@@ -1,0 +1,50 @@
+================================================================================
+RAILWAY RESERVATION SYSTEM - TERMINAL COMMANDS & EXECUTION GUIDE
+================================================================================
+
+1. PREREQUISITES & DEPENDENCY INSTALLATION (Ubuntu / Debian):
+--------------------------------------------------------------------------------
+Open terminal and run:
+
+sudo apt update
+sudo apt install -y build-essential pkg-config libgtk-3-dev
+
+
+2. COMPILATION (GCC with GTK3):
+--------------------------------------------------------------------------------
+Navigate to the project root directory and run:
+
+gcc -Wall -Wextra -Wpedantic src/railway_reservation_v4_responsive_no_top_bar.c -o railway_v4 $(pkg-config --cflags --libs gtk+-3.0)
+
+Or using the Makefile:
+make
+
+Or using the build script:
+bash scripts/build.sh
+
+
+3. RUNNING THE APPLICATION:
+--------------------------------------------------------------------------------
+To run with a clean GTK environment:
+
+env -i HOME="$HOME" PATH="/usr/bin:/bin" DISPLAY="$DISPLAY" \
+XAUTHORITY="$XAUTHORITY" XDG_RUNTIME_DIR="$XDG_RUNTIME_DIR" \
+XDG_DATA_DIRS="/usr/local/share:/usr/share" \
+XDG_CONFIG_DIRS="/etc/xdg" ./railway_v4
+
+Or simply:
+./railway_v4
+
+Or using the run script:
+bash scripts/run.sh
+
+Or using Make:
+make run
+
+
+4. CLEANING BUILD ARTIFACTS:
+--------------------------------------------------------------------------------
+rm -f railway_v4
+# or:
+make clean
+================================================================================

@@ -1,0 +1,10 @@
+# Build targets
+railway_v4
+*.o
+*.out
+
+# Editor & OS files
+.DS_Store
+Thumbs.db
+*.swp
+*~
